@@ -1,4 +1,5 @@
-# Simple methods, computed, and watch in vue.js
+# Simple methods, computed, and watch in vue.js using vuetify
+This is just small github repo to understand how to use method, computed, and watch in vue.js
 
 ## Project setup
 ```
