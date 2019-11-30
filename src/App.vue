@@ -1,28 +1,47 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app
+      color="indigo"
+      dark>
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">
+          Methods-Computed-Watchers
+        </router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn
+         text
+         v-for="item in menuItems"
+         :key="item.title"
+         :to="item.path">
+         <v-icon left>{{item.icon}}</v-icon>
+         {{item.title}}
+        </v-btn>
+      </v-toolbar-items>
+    </v-app-bar>
+    <v-content>
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: 'App',
+  data() {
+    return {
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    }
+  },
+  computed: {
+    menuItems() {
+      return [
+        {title: 'Methods', path: '/methods', icon: 'mdi-call-made'},
+        {title: 'Computed', path: '/computed', icon: 'mdi-calculator'},
+        {title: 'Watchers', path: '/watchers', icon: 'mdi-eye'},
+      ]
+    }
+  }
+};
+</script>
