@@ -1,4 +1,4 @@
-# validate
+# Simple methods, computed, and watch in vue.js
 
 ## Project setup
 ```
