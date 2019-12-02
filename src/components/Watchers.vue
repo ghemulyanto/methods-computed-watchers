@@ -3,8 +3,8 @@
         <v-row>
             <v-col cols="12" md="6">
                 <v-sheet elevation="12" class="pa-12">
-                    <v-text-field type="number" v-model.number="counter"></v-text-field>
-                    <p>{{ message }}</p>
+                    <v-text-field label="Kilometer" v-model="kilometers"></v-text-field>
+                    <v-text-field label="Meters" v-model="meters"></v-text-field>
                 </v-sheet>
             </v-col>
            
@@ -14,14 +14,17 @@
 <script>
 export default {
     data: () => ({
-        message:'',
-        counter: 0
+        kilometers: 0,
+        meters:0
         
     }),
     
     watch: {
-        counter() {
-             this.message = 'Counter has change'
+        kilometers() {
+            this.meters = this.kilometers * 1000
+        },
+        meters(){
+            this.kilometers = this.meters/1000
         }
     }
 }
